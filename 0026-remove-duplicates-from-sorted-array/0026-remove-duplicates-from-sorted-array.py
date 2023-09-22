@@ -3,7 +3,7 @@ class Solution:
         n = len(nums)
         i = 1
         j = 1
-        while i < len(nums):
+        while i < n:
             if nums[i] != nums[i-1]:
                 nums[j] = nums[i]
                 j+=1
