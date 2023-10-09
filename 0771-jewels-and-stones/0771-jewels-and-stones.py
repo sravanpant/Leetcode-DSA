@@ -9,5 +9,5 @@ class Solution:
         for j in range(n):
             for key, value in stones_dict.items():
                 if jewels[j] == key:
-                    count+=value
+                    count += value
         return count
