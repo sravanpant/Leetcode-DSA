@@ -3,8 +3,11 @@ class Solution:
         n = len(jewels)
         m = len(stones)
         count = 0
-        for i in range(n):
-            for j in range(m):
-                if jewels[i] == stones[j]:
-                    count+=1
+        stones_dict = dict()
+        for i in range(m):
+            stones_dict[stones[i]] = stones_dict.get(stones[i], 0)+1
+        for j in range(n):
+            for key, value in stones_dict.items():
+                if jewels[j] == key:
+                    count += value
         return count
