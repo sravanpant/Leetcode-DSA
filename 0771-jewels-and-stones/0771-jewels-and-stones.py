@@ -8,6 +8,7 @@ class Solution:
             stones_dict[stones[i]] = stones_dict.get(stones[i], 0)+1
         keys = stones_dict.keys()
         for j in range(n):
-            if jewels[j] in keys:
-                count+=stones_dict[jewels[j]]
+            for key, value in stones_dict.items():
+                if jewels[j] == key:
+                    count+=value
         return count
