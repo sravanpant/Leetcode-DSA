@@ -1,7 +1,6 @@
 class Solution:
     def solve(self, idx, seq, subseq, nums, n):
         if idx == n:
-            print(subseq)
             seq.append(subseq[:])
             return
 
