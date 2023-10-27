@@ -1,20 +1,17 @@
 class Solution:
-    def solve(self, idx, seq, subseq, nums, n):
+    def solve(self, seq, subseq, nums, idx, n):
         if idx == n:
             seq.append(subseq[:])
             return
-
         subseq.append(nums[idx])
-        self.solve(idx + 1, seq, subseq[:], nums, n)
+        self.solve(seq, subseq[:],nums, idx+1, n)
         subseq.pop()
-        self.solve(idx + 1, seq, subseq[:], nums, n)
-        return
-    
+        self.solve(seq, subseq[:], nums, idx+1, n)
+        
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        subseq = []
         seq = []
+        subseq = []
         n = len(nums)
-        self.solve(0, seq, subseq, nums, n)
+        idx = 0
+        self.solve(seq, subseq, nums, idx, n)
         return seq
-        
-        
