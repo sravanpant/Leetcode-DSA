@@ -3,6 +3,22 @@ class Solution:
         n=len(numbers)
         i=0
         j=n-1
+        while(i<j):
+            ans = numbers[i]+numbers[j]
+            if ans==target:
+                i+=1
+                j+=1
+                return [i,j]
+                break
+            elif ans > target:
+                j-=1
+            else:
+                i+=1
+        
+    '''
+    n=len(numbers)
+        i=0
+        j=n-1
         arr=[]
         while(i<j):
             ans = numbers[i]+numbers[j]
@@ -17,5 +33,6 @@ class Solution:
             else:
                 i+=1
         return arr
+    '''
         
             
