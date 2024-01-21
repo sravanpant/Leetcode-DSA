@@ -1,14 +1,9 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        n = len(nums)
-        if n<2:
-            return nums[0]
         
-        maxLoot=[None]*n
-        maxLoot[0]=nums[0]
-        maxLoot[1]=max(nums[0], nums[1])
+        maxLoot2, maxLoot1 = 0,0
         
-        for i in range(2,n):
-            maxLoot[i]=max(maxLoot[i-2]+nums[i], maxLoot[i-1])
+        for i in nums:
+            maxLoot2, maxLoot1 = maxLoot1, max(maxLoot2 + i, maxLoot1)
         
-        return maxLoot[n-1]
+        return maxLoot1
