@@ -6,7 +6,7 @@ class Solution:
         while r<n:
             if prices[l]<prices[r]:
                 profit=prices[r]-prices[l]
-                maxP=max(maxP,profit)
+                maxP=max(maxP, profit)
             else:
                 l=r
             r+=1
